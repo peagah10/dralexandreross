@@ -1,0 +1,2814 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Alexandre Ross - Especialista em Odontologia</title>
+
+    <!-- Meta padrão -->
+    <meta name="description" content="Clínica odontológica especializada em tecnologia e conforto. Transforme seu sorriso com o Dr. Alexandre Ross.">
+
+    <!-- Open Graph para WhatsApp, Instagram, Facebook -->
+    <meta property="og:title" content="Dr. Alexandre Ross - Especialista em Odontologia">
+    <meta property="og:description" content="Tecnologia avançada, conforto e precisão no seu tratamento odontológico.">
+    <meta property="og:image" content="https://dr.alexandreross.netlify.app/logo.jpg">
+    <meta property="og:url" content="https://dr.alexandreross.netlify.app">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <title>Dentista em Santana do Ipanema | Dr. Alexandre Ross</title>
+<meta name="description" content="Consultório odontológico moderno e especializado. Agende sua consulta com o Dr. Alexandre Ross, dentista em Santana do Ipanema. Tecnologia e conforto para o seu sorriso.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6', // Azul mais vibrante
+                        primaryLight: '#60A5FA',
+                        primaryDark: '#2563EB',
+                        accent: '#F59E0B', // Laranja âmbar
+                        accentLight: '#FBBF24',
+                        light: '#F8FAFC',
+                        dark: '#1E293B',
+                        bgLight: '#e6f0ff', // Azul clarinho para o fundo
+                        bgDark: '#0f172a', // Azul escuro para modo dark
+                    },
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'custom': '0 10px 25px -5px rgba(59, 130, 246, 0.1)',
+                        'custom-lg': '0 20px 35px -10px rgba(59, 130, 246, 0.15)',
+                        'custom-hover': '0 25px 50px -12px rgba(59, 130, 246, 0.25)',
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)',
+                        'gradient-accent': 'linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%)',
+                    }
+                }
+            },
+            darkMode: 'class',
+        }
+
+        // Detectar modo escuro
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        /* Background azul claro aplicado às seções específicas */
+        section:not(#inicio, #cta, #contato) {
+            background-color: #e6f0ff; 
+        }
+        
+        .dark section:not(#inicio, #cta, #contato) {
+            background-color: #0f172a; 
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        
+        .before-after-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        
+        .before-after-item {
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
+        }
+        
+        /* Ajustando o layout para mobile - 2 por linha */
+        @media (max-width: 640px) {
+            .before-after-item {
+                flex: 0 0 calc(50% - 10px);
+                min-width: 140px;
+            }
+            
+            .before-after-container {
+                gap: 10px;
+            }
+        }
+        
+        .before-after-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 640px) {
+            .before-after-image {
+                height: 150px;
+            }
+        }
+        
+        .before-after-item:hover .before-after-image {
+            transform: scale(1.05);
+        }
+        
+        .before-after-item:hover .before-after-label {
+            background-color: rgba(59, 130, 246, 0.9);
+            color: white;
+        }
+        
+        .faq-item .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .floating-whatsapp a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .floating-whatsapp a:hover {
+            transform: scale(1.1);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #3B82F6;
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top a:hover {
+            transform: scale(1.1);
+            background-color: #2563EB;
+        }
+        
+        .slide {
+            display: none;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .slide.active {
+            display: block;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .custom-form .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .custom-form .form-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background-color: #F8FAFC;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-form .form-input:focus {
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            outline: none;
+        }
+        
+        .custom-form .form-label {
+            position: absolute;
+            left: 1rem;
+            top: 0.875rem;
+            color: #64748B;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-form .form-input:focus ~ .form-label,
+        .custom-form .form-input:not(:placeholder-shown) ~ .form-label {
+            top: -0.5rem;
+            left: 0.8rem;
+            font-size: 0.75rem;
+            padding: 0 0.25rem;
+            background-color: white;
+            color: #3B82F6;
+        }
+        
+        .dark .custom-form .form-input {
+            background-color: #2D3748;
+            border-color: rgba(59, 130, 246, 0.3);
+            color: white;
+        }
+        
+        .dark .custom-form .form-label {
+            color: #A0AEC0;
+        }
+        
+        .dark .custom-form .form-input:focus ~ .form-label,
+        .dark .custom-form .form-input:not(:placeholder-shown) ~ .form-label {
+            background-color: #1A202C;
+            color: #60A5FA;
+        }
+        
+        .hidden-cases {
+            display: none;
+        }
+        
+        .hidden-cases.show {
+            display: flex;
+        }
+        
+        .map-container {
+            position: relative;
+            padding-bottom: 400px;
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+          
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: translateY(-5px);
+        }
+        
+        .section-heading {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 640px) {
+            .map-container {
+                padding-bottom: 250px;
+            }
+            
+            .service-icon {
+                font-size: 2rem;
+            }
+            
+            .timeline-container {
+                padding-left: 1.5rem;
+            }
+            
+            .timeline-item::before {
+                left: -1.5rem;
+            }
+            
+            /* Centralizar o footer no mobile */
+            footer .grid > div {
+                text-align: center;
+            }
+            
+            footer .flex.items-center {
+                justify-content: center;
+            }
+            
+            footer .flex.space-x-5 {
+                justify-content: center;
+            }
+            
+            footer .space-y-4 p.flex {
+                justify-content: center;
+            }
+            
+            footer ul li a {
+                justify-content: center;
+            }
+        }
+        
+        /* Efeito de animação sutil - Melhorado para mais variedades */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes slideUpIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        .animate-fadeInLeft {
+            animation: fadeInLeft 0.6s ease-out forwards;
+        }
+        
+        .animate-fadeInRight {
+            animation: fadeInRight 0.6s ease-out forwards;
+        }
+        
+        .animate-scaleIn {
+            animation: scaleIn 0.5s ease-out forwards;
+        }
+        
+        .animate-slideUpIn {
+            animation: slideUpIn 0.7s ease-out forwards;
+        }
+        
+        /* Novos estilos para animações de entrada */
+        .reveal {
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+        }
+        
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal-left.active, .reveal-right.active, .reveal-up.active, .reveal-scale.active {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+        
+        .before-after-label {
+            transition: all 0.3s ease;
+        }
+        
+        /* Modal de imagem - Melhorado com animação mais suave */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+            transition: all 0.4s ease;
+            opacity: 0;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.show {
+            opacity: 1;
+        }
+        
+        .modal-content {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 90vh;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.5s ease;
+        }
+        
+        .modal.show .modal-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .close-modal:hover {
+            color: #3B82F6;
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+        
+        /* Timeline */
+        .timeline-container {
+            position: relative;
+            padding-left: 2rem;
+            margin-left: 1rem;
+            border-left: 2px solid #3B82F6;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #3B82F6;
+            left: -2.5rem;
+            top: 0.25rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
+        }
+        
+        .timeline-item:hover::before {
+            background-color: #2563EB;
+            transform: scale(1.2);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Simulador de Sorriso */
+        .teeth-simulator {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .teeth-simulator:hover {
+            box-shadow: 0 15px 30px -10px rgba(59, 130, 246, 0.25);
+            transform: translateY(-5px);
+        }
+        
+        .teeth-simulator img {
+            width: 100%;
+            transition: opacity 0.5s ease;
+        }
+        
+        .teeth-original {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+        
+        .slider-container {
+            width: 100%;
+            padding: 1rem 0;
+        }
+        
+        .teeth-slider {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e2e8f0;
+            outline: none;
+            position: relative;
+        }
+        
+        
+        .teeth-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #3B82F6;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.3);
+        }
+        
+        .teeth-slider::-webkit-slider-thumb:hover {
+            background: #2563EB;
+            transform: scale(1.2);
+            box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.2);
+        }
+        
+        /* Melhorias nos efeitos de hover para botões */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            z-index: -1;
+        }
+        
+        .btn-primary:hover::before {
+            width: 300%;
+            height: 300%;
+        }
+        
+        /* Skeleton loading */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+        
+        .dark .skeleton {
+            background: linear-gradient(90deg, #2d3748 25%, #4a5568 50%, #2d3748 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+        
+        @keyframes skeleton-loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+        
+        /* Indicador de navegação aprimorado */
+        .nav-indicator {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: none;
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-indicator {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+        
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(203, 213, 225, 0.5);
+            transition: all 0.4s ease;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .nav-dot::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background-color: #3B82F6;
+            transform: scale(1.3);
+        }
+        
+        .nav-dot:hover::after {
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+        
+        .nav-dot.active::after {
+            border-color: rgba(59, 130, 246, 0.8);
+        }
+        
+        .dark .nav-dot {
+            background-color: rgba(71, 85, 105, 0.5);
+        }
+        
+        .dark .nav-dot.active {
+            background-color: #3B82F6;
+        }
+        
+        /* Tooltip para os pontos de navegação */
+        .nav-dot .tooltip {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #3B82F6;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 30px;
+        }
+        
+        /* Logo wall para certificações */
+        .logo-wall {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 80px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.4s ease;
+        }
+        
+        .logo-item:hover {
+            filter: grayscale(0);
+            opacity: 1;
+            transform: scale(1.1) rotate(2deg);
+        }
+        
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        /* Cards de tecnologias */
+        .tech-card {
+            transition: all 0.4s ease;
+            overflow: hidden;
+            transform-origin: center bottom;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 30px -15px rgba(59, 130, 246, 0.25);
+        }
+        
+        .tech-card:hover .tech-icon {
+            transform: scale(1.2) rotate(5deg);
+            color: #3B82F6;
+        }
+        
+        .tech-icon {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        /* Destaque - Por que nos escolher */
+        .feature-card {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-bottom: 3px solid transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-15px);
+            border-bottom: 3px solid #3B82F6;
+        }
+        
+        .feature-icon {
+            transition: all 0.4s ease;
+            transform-origin: center;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: #3B82F6;
+        }
+        
+        /* Melhorias no menu mobile */
+        #mobileMenu {
+            transform: translateY(-10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        #mobileMenu.show {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Efeito de scroll para elementos */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3B82F6, #60A5FA);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+        
+        /* Melhorias em formulários */
+        .form-input:focus::placeholder {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        
+        .btn-submit {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-submit::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: -100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.8s ease;
+        }
+        
+        .btn-submit:hover::after {
+            left: 100%;
+        }
+        
+        /* Melhorias para FAQ */
+        .faq-item {
+            border-left: 0px solid #3B82F6;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-left: 5px solid #3B82F6;
+            transform: translateX(5px);
+        }
+        
+        .faq-item .toggle {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item.active .toggle {
+            transform: rotate(45deg);
+        }
+        
+        /* Efeito de pulse para CTA principal */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
+        }
+        
+        .cta-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Carrossel de depoimentos */
+        .testimonials-carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+        
+        .testimonials-track {
+            display: flex;
+            animation: scrollLeft 30s linear infinite;
+            width: fit-content;
+        }
+        
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .testimonial-card {
+            flex: 0 0 300px;
+            margin: 0 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Correção container e layout */
+        .container {
+            width: 100%;
+            max-width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+        
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1024px;
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px;
+            }
+        }
+        
+        /* Correção modal imagem */
+        #imageModal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de progresso do scroll -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-10 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="logo text-primary dark:text-primaryLight mr-2">AR</div>
+                <h1 class="text-xl sm:text-2xl font-semibold">Dr.AlexandreRoss</h1>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#inicio" class="hover:text-primary transition-colors nav-link relative group">
+                        Início
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="#sobre" class="hover:text-primary transition-colors nav-link relative group">
+                        Sobre
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="#por-que-nos" class="hover:text-primary transition-colors nav-link relative group">
+                        Por que nós
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="#antes-depois" class="hover:text-primary transition-colors nav-link relative group">
+                        Antes/Depois
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="#tratamentos" class="hover:text-primary transition-colors nav-link relative group">
+                        Tratamentos
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="#tecnologias" class="hover:text-primary transition-colors nav-link relative group">
+                        Tecnologias
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="#simulador" class="hover:text-primary transition-colors nav-link relative group">
+                        Simulador
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="#faq" class="hover:text-primary transition-colors nav-link relative group">
+                        FAQ
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="#contato" class="hover:text-primary transition-colors nav-link relative group">
+                        Contato
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-2xl transition-transform duration-300 hover:scale-110" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-800 py-4 px-4">
+            <ul class="space-y-3">
+                <li><a href="#inicio" class="block hover:text-primary transition-colors py-2 hover:translate-x-2 transform duration-300 flex items-center">
+                    <i class="fas fa-home mr-2 text-primary"></i>Início
+                </a></li>
+                <li><a href="#sobre" class="block hover:text-primary transition-colors py-2 hover:translate-x-2 transform duration-300 flex items-center">
+                    <i class="fas fa-user-md mr-2 text-primary"></i>Sobre
+                </a></li>
+                <li><a href="#por-que-nos" class="block hover:text-primary transition-colors py-2 hover:translate-x-2 transform duration-300 flex items-center">
+                    <i class="fas fa-check-circle mr-2 text-primary"></i>Por que nós
+                </a></li>
+                <li><a href="#antes-depois" class="block hover:text-primary transition-colors py-2 hover:translate-x-2 transform duration-300 flex items-center">
+                    <i class="fas fa-sync-alt mr-2 text-primary"></i>Antes/Depois
+                </a></li>
+                <li><a href="#tratamentos" class="block hover:text-primary transition-colors py-2 hover:translate-x-2 transform duration-300 flex items-center">
+                    <i class="fas fa-procedures mr-2 text-primary"></i>Tratamentos
+                </a></li>
+                <li><a href="#tecnologias" class="block hover:text-primary transition-colors py-2 hover:translate-x-2 transform duration-300 flex items-center">
+                    <i class="fas fa-microscope mr-2 text-primary"></i>Tecnologias
+                </a></li>
+                <li><a href="#simulador" class="block hover:text-primary transition-colors py-2 hover:translate-x-2 transform duration-300 flex items-center">
+                    <i class="fas fa-magic mr-2 text-primary"></i>Simulador
+                </a></li>
+                <li><a href="#faq" class="block hover:text-primary transition-colors py-2 hover:translate-x-2 transform duration-300 flex items-center">
+                    <i class="fas fa-question-circle mr-2 text-primary"></i>FAQ
+                </a></li>
+                <li><a href="#contato" class="block hover:text-primary transition-colors py-2 hover:translate-x-2 transform duration-300 flex items-center">
+                    <i class="fas fa-envelope mr-2 text-primary"></i>Contato
+                </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Navigation Indicator -->
+    <div class="nav-indicator">
+        <div class="nav-dot" data-section="inicio">
+            <span class="tooltip">Início</span>
+        </div>
+        <div class="nav-dot" data-section="sobre">
+            <span class="tooltip">Sobre</span>
+        </div>
+        <div class="nav-dot" data-section="por-que-nos">
+            <span class="tooltip">Por que nós</span>
+        </div>
+        <div class="nav-dot" data-section="antes-depois">
+            <span class="tooltip">Antes/Depois</span>
+        </div>
+        <div class="nav-dot" data-section="tratamentos">
+            <span class="tooltip">Tratamentos</span>
+        </div>
+        <div class="nav-dot" data-section="tecnologias">
+            <span class="tooltip">Tecnologias</span>
+        </div>
+        <div class="nav-dot" data-section="simulador">
+            <span class="tooltip">Simulador</span>
+        </div>
+        <div class="nav-dot" data-section="faq">
+            <span class="tooltip">FAQ</span>
+        </div>
+        <div class="nav-dot" data-section="contato">
+            <span class="tooltip">Contato</span>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp">
+        <a href="https://wa.me/5575991342279" target="_blank" aria-label="Chat on WhatsApp" class="cta-pulse">
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <a href="#inicio" aria-label="Voltar ao topo">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+    
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Hero Section with Slider -->
+    <section id="inicio" class="relative h-[40vh] overflow-hidden">
+        <div class="slider h-full">
+            <div class="slide active h-full">
+                <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+                <!-- Lazy loading para primeira imagem não é necessário pois é visível imediatamente -->
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200" alt="Consultório Dental" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center z-10">
+                    <div class="text-center text-white px-4 max-w-4xl">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 animate-fadeIn">Sorrisos Perfeitos, Vidas Transformadas</h2>
+                        <p class="text-base md:text-lg mb-5 max-w-3xl mx-auto animate-fadeIn" style="animation-delay: 0.3s">Tratamentos odontológicos avançados com o Dr. AlexandreRoss, referência em sorrisos estéticos e saudáveis.</p>
+                        <a href="https://wa.me/5575991342279" target="_blank" class="bg-gradient-primary text-white px-8 py-3 rounded-lg text-lg font-medium transition-all shadow-lg hover:shadow-xl btn-primary animate-scaleIn cta-pulse" style="animation-delay: 0.6s">Agendar Consulta</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide h-full">
+                <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+                <img src="images/cons.jpg" alt="Consultório Dental" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center z-10">
+                    <div class="text-center text-white px-4 max-w-4xl">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-3">Tecnologia de Ponta ao Seu Dispor</h2>
+                        <p class="text-base md:text-lg mb-5 max-w-3xl mx-auto">Equipamentos modernos e técnicas avançadas para resultados superiores e procedimentos mais confortáveis.</p>
+                        <a href="#contato" class="bg-gradient-primary text-white px-8 py-3 rounded-lg text-lg font-medium transition-all shadow-lg hover:shadow-xl btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide h-full">
+                <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200" alt="Consultório Dental" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center z-10">
+                    <div class="text-center text-white px-4 max-w-4xl">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-3">Experiência e Cuidado Personalizado</h2>
+                        <p class="text-base md:text-lg mb-5 max-w-3xl mx-auto">Atendimento exclusivo e tratamento personalizado para cada paciente com foco em resultados duradouros.</p>
+                        <a href="#antes-depois" class="bg-gradient-primary text-white px-8 py-3 rounded-lg text-lg font-medium transition-all shadow-lg hover:shadow-xl btn-primary">Ver Resultados</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slider controls -->
+            <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 text-white p-3 rounded-full z-20 hover:bg-opacity-40 transition-all hover:scale-110" id="prevSlide">
+                <i class="fas fa-chevron-left text-xl"></i>
+            </button>
+            <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 text-white p-3 rounded-full z-20 hover:bg-opacity-40 transition-all hover:scale-110" id="nextSlide">
+                <i class="fas fa-chevron-right text-xl"></i>
+            </button>
+            
+            <!-- Slider indicators -->
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+                <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 slider-indicator active hover:bg-opacity-100 transition-all hover:scale-150" data-slide="0"></button>
+                <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 slider-indicator hover:bg-opacity-100 transition-all hover:scale-150" data-slide="1"></button>
+                <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 slider-indicator hover:bg-opacity-100 transition-all hover:scale-150" data-slide="2"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-20 reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-heading reveal-up">
+                    Sobre Dr. AlexandreRoss
+                </h2>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2 reveal-left">
+                    <p class="mb-6 text-lg leading-relaxed">O Dr. AlexandreRoss é um cirurgião-dentista dedicado e apaixonado por transformar sorrisos. Com mais de 15 anos de experiência, ele tem ajudado pacientes a alcançarem resultados extraordinários, combinando técnica, arte e tecnologia de ponta.</p>
+                    <p class="mb-6 text-lg leading-relaxed">Formado pela Universidade Federal da Bahia, com especialização em Implantodontia e Estética Dental, o Dr. AlexandreRoss está sempre atualizado com as técnicas mais modernas e eficientes para garantir a saúde bucal e o sorriso perfeito para seus pacientes.</p>
+                    <p class="text-lg leading-relaxed mb-8">Seu comprometimento com a excelência e atenção personalizada fazem do Dr. AlexandreRoss um dos profissionais mais requisitados em sua área, sendo referência em tratamentos estéticos avançados.</p>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transform transition-all duration-500 hover:scale-110 hover:shadow-lg">
+                            <div class="text-primary text-3xl mb-2"><i class="fas fa-user-md"></i></div>
+                            <h3 class="font-semibold mb-1">Experiência</h3>
+                            <p>15+ Anos</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transform transition-all duration-500 hover:scale-110 hover:shadow-lg">
+                            <div class="text-primary text-3xl mb-2"><i class="fas fa-smile"></i></div>
+                            <h3 class="font-semibold mb-1">Pacientes</h3>
+                            <p>1000+</p>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg text-center transform transition-all duration-500 hover:scale-110 hover:shadow-lg">
+                            <div class="text-primary text-3xl mb-2"><i class="fas fa-certificate"></i></div>
+                            <h3 class="font-semibold mb-1">Especialidades</h3>
+                            <p>Múltiplas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center reveal-right">
+                    <img src="images/dr.jpg" alt="Dr. Alexandre Ross" class="rounded-lg shadow-custom-lg max-w-full h-auto" style="max-height: 480px;">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Por que nos escolher Section (NOVA SEÇÃO) -->
+    <section id="por-que-nos" class="py-20 reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-heading reveal-up">
+                    Por Que Nos Escolher
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto reveal-up" style="animation-delay: 0.2s">Descubra os diferenciais que fazem do consultório do Dr. AlexandreRoss a escolha ideal para o seu sorriso</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-up" style="animation-delay: 0.4s">
+                <!-- Feature 1 -->
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-custom feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-primary text-5xl mb-6 feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Excelência Profissional</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Equipe altamente qualificada e constantemente atualizada com as mais recentes técnicas e pesquisas em odontologia. Nossos profissionais possuem especialização, mestrado e doutorado nas diversas áreas da odontologia.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-custom feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-primary text-5xl mb-6 feature-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Atendimento Personalizado</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Reconhecemos que cada paciente é único. Por isso, desenvolvemos planos de tratamento completamente personalizados, considerando suas necessidades específicas, objetivos e histórico dental.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-custom feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-primary text-5xl mb-6 feature-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Tecnologia Avançada</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Investimos constantemente em equipamentos de última geração que garantem diagnósticos precisos, tratamentos menos invasivos e resultados superiores, proporcionando mais conforto e segurança.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-custom feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-primary text-5xl mb-6 feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Pontualidade e Acessibilidade</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Valorizamos seu tempo com agendamentos precisos e horários flexíveis. Nosso sistema de marcação de consultas é eficiente e oferecemos atendimento nos finais de semana para casos especiais.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-custom feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-primary text-5xl mb-6 feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Segurança e Biossegurança</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Seguimos rigorosos protocolos de esterilização e segurança que excedem os padrões recomendados pelos órgãos reguladores, garantindo um ambiente clínico totalmente seguro para nossos pacientes.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-custom feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-primary text-5xl mb-6 feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Resultados Duradouros</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Nosso compromisso vai além do tratamento inicial. Oferecemos acompanhamento contínuo e orientações personalizadas para garantir que os resultados obtidos sejam mantidos por muitos anos.</p>
+                </div>
+            </div>
+            
+            <!-- Certificações e Associações (NOVA SEÇÃO) -->
+            <div class="mt-20 reveal-up" style="animation-delay: 0.6s">
+                <div class="text-center mb-12">
+                    <h3 class="text-2xl font-semibold mb-4">Certificações e Associações</h3>
+                    <p class="text-lg max-w-2xl mx-auto mb-8">Orgulhosamente associados às principais entidades odontológicas, garantindo os mais altos padrões de qualidade e ética</p>
+                </div>
+                
+                <div class="logo-wall bg-white dark:bg-gray-700 p-8 rounded-xl shadow-custom">
+                    <div class="logo-item" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="images/c1.jpg" alt="Conselho Federal de Odontologia">
+                    </div>
+                    <div class="logo-item" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="images/c2.jpg" alt="Associação Brasileira de Odontologia">
+                    </div>
+                    <div class="logo-item" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="images/c3.jpg" alt="Sociedade Brasileira de Odontologia Estética">
+                    </div>
+                    <div class="logo-item" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="images/c4.jpg" alt="Academia Brasileira de Osseointegração">
+                    </div>
+                    <div class="logo-item" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="images/c5.jpg" alt="International Team for Implantology">
+                    </div>
+                    <div class="logo-item" data-aos="zoom-in" data-aos-delay="600">
+                        <img src="images/c6.jpg" alt="American Academy of Cosmetic Dentistry">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Antes e Depois Section -->
+    <section id="antes-depois" class="py-20 reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-heading reveal-up">
+                    Antes e Depois
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto reveal-up" style="animation-delay: 0.2s">Veja os resultados transformadores obtidos por nossos pacientes e imagine como podemos transformar o seu sorriso</p>
+            </div>
+            
+            <div class="before-after-container reveal-up" style="animation-delay: 0.3s">
+                <div class="before-after-item" data-aos="fade-right">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500 overflow-hidden">
+                        <div class="before-after-label text-xl font-semibold py-2 mb-3 text-center rounded-t-lg">Antes</div>
+                        <img src="images/b1.jpg" alt="Antes do tratamento dental" class="before-after-image rounded" data-full-src="https://i.imgur.com/s3hFAiA.jpg">
+                    </div>
+                </div>
+                
+                <div class="before-after-item" data-aos="fade-left">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500 overflow-hidden">
+                        <div class="before-after-label text-xl font-semibold py-2 mb-3 text-center rounded-t-lg">Depois</div>
+                        <img src="images/b1.1.jpg" alt="Depois do tratamento dental" class="before-after-image rounded" data-full-src="https://i.imgur.com/3vZXaX8.jpg">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 before-after-container reveal-up" style="animation-delay: 0.5s">
+                <div class="before-after-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500 overflow-hidden">
+                        <div class="before-after-label text-xl font-semibold py-2 mb-3 text-center rounded-t-lg">Antes</div>
+                        <img src="images/clare1.1.jpg" alt="Antes do tratamento dental" class="before-after-image rounded" data-full-src="https://i.imgur.com/VVUPTT9.jpg">
+                    </div>
+                </div>
+                
+                <div class="before-after-item" data-aos="fade-left" data-aos-delay="200">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500 overflow-hidden">
+                        <div class="before-after-label text-xl font-semibold py-2 mb-3 text-center rounded-t-lg">Depois</div>
+                        <img src="images/clare1.jpg" alt="Depois do tratamento dental" class="before-after-image rounded" data-full-src="https://i.imgur.com/oSdcYI7.jpg">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hidden cases (will be shown when "Ver mais casos" is clicked) -->
+            <div class="mt-12 before-after-container hidden-cases">
+                <div class="before-after-item" data-aos="fade-up">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500 overflow-hidden">
+                        <div class="before-after-label text-xl font-semibold py-2 mb-3 text-center rounded-t-lg">Antes</div>
+                        <img src="images/impla1.1.jpg" alt="Antes do tratamento dental" class="before-after-image rounded" data-full-src="https://i.imgur.com/R2Wd1pu.jpg">
+                    </div>
+                </div>
+                
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500 overflow-hidden">
+                        <div class="before-after-label text-xl font-semibold py-2 mb-3 text-center rounded-t-lg">Depois</div>
+                        <img src="images/impla1.jpg" alt="Depois do tratamento dental" class="before-after-image rounded" data-full-src="https://i.imgur.com/JYxXBGX.jpg">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 before-after-container hidden-cases">
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500 overflow-hidden">
+                        <div class="before-after-label text-xl font-semibold py-2 mb-3 text-center rounded-t-lg">Antes</div>
+                        <img src="images/a1.jpg" alt="Antes do tratamento dental" class="before-after-image rounded" data-full-src="https://i.imgur.com/8xeVhgB.jpg">
+                    </div>
+                </div>
+                
+                <div class="before-after-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500 overflow-hidden">
+                        <div class="before-after-label text-xl font-semibold py-2 mb-3 text-center rounded-t-lg">Depois</div>
+                        <img src="images/a1.1.jpg" alt="Depois do tratamento dental" class="before-after-image rounded" data-full-src="https://i.imgur.com/pD2ikc5.jpg">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center reveal-up" style="animation-delay: 0.6s">
+                <button id="verMaisCasosBtn" class="inline-block bg-gradient-primary hover:bg-primaryDark text-white px-8 py-3 rounded-lg font-medium transition-all shadow-md hover:shadow-lg btn-primary relative overflow-hidden">
+                    <span class="mr-2">Ver mais casos</span>
+                    <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Linha do tempo de tratamentos Section -->
+    <section id="tratamentos" class="py-20 reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-heading reveal-up">
+                    Etapas do Tratamento
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto reveal-up" style="animation-delay: 0.2s">Conheça o passo a passo dos nossos principais tratamentos</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="reveal-left">
+                    <h3 class="text-2xl font-semibold mb-6 text-primary">Implantes Dentários</h3>
+                    <div class="timeline-container">
+                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                            <h4 class="text-xl font-semibold mb-2">Avaliação Inicial</h4>
+                            <p>Consultamos o histórico médico do paciente, realizamos exames clínicos e radiográficos para avaliar a viabilidade dos implantes.</p>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                            <h4 class="text-xl font-semibold mb-2">Planejamento Digital</h4>
+                            <p>Utilizando tecnologia 3D, planejamos com precisão o posicionamento dos implantes para garantir resultados estéticos e funcionais.</p>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+                            <h4 class="text-xl font-semibold mb-2">Procedimento Cirúrgico</h4>
+                            <p>Com anestesia adequada, inserimos os implantes de titânio no osso da mandíbula ou maxila, servindo como raízes artificiais.</p>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">
+                            <h4 class="text-xl font-semibold mb-2">Período de Osseointegração</h4>
+                            <p>Aguardamos entre 3 a 6 meses para que os implantes se integrem naturalmente ao osso, garantindo estabilidade.</p>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="500">
+                            <h4 class="text-xl font-semibold mb-2">Colocação da Prótese</h4>
+                            <p>Finalizamos o tratamento com a instalação das coroas ou próteses definitivas, devolvendo função e estética ao sorriso.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-right">
+                    <h3 class="text-2xl font-semibold mb-6 text-primary">Lentes de Contato Dental</h3>
+                    <div class="timeline-container">
+                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                            <h4 class="text-xl font-semibold mb-2">Consulta e Diagnóstico</h4>
+                            <p>Avaliamos o estado atual dos dentes, discutimos expectativas e determinamos se as lentes são adequadas para o caso.</p>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                            <h4 class="text-xl font-semibold mb-2">Planejamento Digital do Sorriso</h4>
+                            <p>Através de fotografias e software especializado, projetamos como ficará o novo sorriso antes de iniciar o procedimento.</p>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+                            <h4 class="text-xl font-semibold mb-2">Preparação Mínima</h4>
+                            <p>Realizamos um leve desgaste na superfície do dente (menos de 0,5mm) para garantir o encaixe perfeito das lentes.</p>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">
+                            <h4 class="text-xl font-semibold mb-2">Moldagem Digital</h4>
+                            <p>Utilizamos scanner intraoral para obter a moldagem precisa dos dentes e enviar ao laboratório para confecção das lentes.</p>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="500">
+                            <h4 class="text-xl font-semibold mb-2">Prova e Instalação</h4>
+                            <p>Verificamos o ajuste, cor e forma das lentes temporárias. Após aprovação, fazemos a cimentação definitiva das lentes de porcelana.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tecnologias Utilizadas (NOVA SEÇÃO) -->
+    <section id="tecnologias" class="py-20 reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-heading reveal-up">
+                    Tecnologias Avançadas
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto reveal-up" style="animation-delay: 0.2s">Conheça os equipamentos modernos utilizados em nosso consultório para proporcionar tratamentos de excelência</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 reveal-up" style="animation-delay: 0.4s">
+                <!-- Tecnologia 1 -->
+<div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-custom tech-card" data-aos="flip-left">
+    <!-- Imagem -->
+    <div class="w-full">
+        <img src="images/t1.jpg" alt="Radiografia Digital" class="w-full h-auto object-contain" />
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="p-6">
+        <h3 class="text-xl font-semibold mb-3">Radiografia Digital</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Imagens de alta definição com mínima exposição à radiação, permitindo diagnósticos precisos e visualização detalhada das estruturas dentárias.
+        </p>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+            <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Redução de 90% na radiação comparado ao método convencional</span>
+            </li>
+            <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Resultados imediatos e maior precisão diagnóstica</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+                
+                <!-- Tecnologia 2 -->
+<div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-custom tech-card" data-aos="flip-left" data-aos-delay="100">
+    <!-- Imagem -->
+    <div class="w-full">
+        <img src="images/t2.jpg" alt="Escaneamento Intraoral 3D" class="w-full h-auto object-contain" />
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="p-6">
+        <h3 class="text-xl font-semibold mb-3">Escaneamento Intraoral 3D</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Scanner digital que substitui o método tradicional de moldagem, criando modelos tridimensionais precisos dos dentes e gengivas.
+        </p>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+            <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Maior conforto ao paciente, sem necessidade de moldes convencionais</span>
+            </li>
+            <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Precisão superior e redução no tempo de tratamento</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+                
+                <!-- Tecnologia 3 -->
+<div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-custom tech-card" data-aos="flip-left" data-aos-delay="200">
+    <!-- Imagem -->
+    <div class="w-full">
+        <img src="images/t3.jpg" alt="Planejamento Digital do Sorriso" class="w-full h-auto object-contain" />
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="p-6">
+        <h3 class="text-xl font-semibold mb-3">Planejamento Digital do Sorriso</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Software avançado que permite projetar e visualizar os resultados estéticos antes de iniciar o tratamento.
+        </p>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+            <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Prévia realista do resultado final do tratamento</span>
+            </li>
+            <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Maior previsibilidade e satisfação com os resultados</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+                
+                <!-- Tecnologia 4 -->
+<div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-custom tech-card" data-aos="flip-left" data-aos-delay="300">
+    <!-- Imagem -->
+    <div class="w-full">
+        <img src="images/t4.jpg" alt="Laser Odontológico" class="w-full h-auto object-contain" />
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="p-6">
+        <h3 class="text-xl font-semibold mb-3">Laser Odontológico</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Equipamento de alta precisão utilizado em diversos procedimentos, desde tratamentos de gengiva até remoção de cáries.
+        </p>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+            <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Procedimentos menos invasivos e mais confortáveis</span>
+            </li>
+            <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Recuperação mais rápida e menos desconforto pós-operatório</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+                
+                <!-- Tecnologia 5 -->
+<div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-custom tech-card" data-aos="flip-left" data-aos-delay="400">
+    <!-- Imagem -->
+    <div class="w-full">
+        <img src="images/t5.jpg" alt="Microscópio Operatório" class="w-full h-auto object-contain" />
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="p-6">
+        <h3 class="text-xl font-semibold mb-3">Microscópio Operatório</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Equipamento de ampliação óptica que permite visualizar detalhes microscópicos durante procedimentos de alta precisão.
+        </p>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+            <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Aumento de até 40x, proporcionando máxima precisão</span>
+            </li>
+            <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Essencial para tratamentos endodônticos complexos</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+                <!-- Tecnologia 6 -->
+<div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-custom tech-card" data-aos="flip-left" data-aos-delay="500">
+    <!-- Imagem -->
+    <div class="w-full">
+        <img src="images/t6.jpg" alt="Impressão 3D" class="w-full h-auto object-contain" />
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="p-6">
+        <h3 class="text-xl font-semibold mb-3">Impressão 3D</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Tecnologia que permite criar guias cirúrgicas, modelos e próteses provisórias com alta precisão diretamente no consultório.
+        </p>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+            <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Redução significativa no tempo de fabricação de próteses</span>
+            </li>
+            <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Maior precisão em procedimentos cirúrgicos guiados</span>
+                    </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Simulador de Sorriso Section -->
+    <section id="simulador" class="py-20 reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-heading reveal-up">
+                    Simulador de Sorriso
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto reveal-up" style="animation-delay: 0.2s">Mova o controle deslizante para ver como seu sorriso pode ser transformado</p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto reveal-up" style="animation-delay: 0.4s">
+                <div class="teeth-simulator relative" data-aos="zoom-in">
+                    <!-- Imagem "Depois" (resultado) -->
+                    <img src="images/antes.jpg" alt="Sorriso transformado" class="w-full h-auto">
+                    
+                    <!-- Imagem "Antes" (original) que será sobreposta -->
+                    <img src="images/depois.jpg" alt="Sorriso original" class="teeth-original w-full h-auto absolute top-0 left-0">
+                </div>
+                
+                <div class="slider-container mt-4">
+                    <input type="range" min="0" max="100" value="50" class="teeth-slider" id="teethSlider">
+                    <div class="flex justify-between mt-2 text-sm font-medium">
+                        <span class="transition-all duration-300 hover:text-primary">Antes</span>
+                        <span class="transition-all duration-300 hover:text-primary">Depois</span>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="mb-4">Veja como seu sorriso pode ser transformado com os tratamentos estéticos do Dr. AlexandreRoss</p>
+                    <a href="#contato" class="inline-block bg-gradient-primary hover:bg-primaryDark text-white px-8 py-3 rounded-lg font-medium transition-all shadow-md hover:shadow-lg btn-primary">
+                        Agende uma Avaliação
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ específico por tratamento -->
+    <section id="faq" class="py-20 reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-heading reveal-up">
+                    Perguntas Frequentes
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto reveal-up" style="animation-delay: 0.2s">Encontre respostas para as dúvidas mais comuns sobre nossos tratamentos</p>
+            </div>
+            
+            <div class="mb-12">
+                <div class="flex justify-center mb-8 reveal-up" style="animation-delay: 0.3s">
+                    <ul class="flex flex-wrap gap-2 md:gap-4 justify-center" id="faqTabs">
+                        <li><button class="px-4 py-2 bg-primary text-white rounded-lg active-tab transition-all duration-300 hover:shadow-lg" data-tab="geral">Geral</button></li>
+                        <li><button class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg transition-all duration-300 hover:shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600" data-tab="implantes">Implantes</button></li>
+                        <li><button class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg transition-all duration-300 hover:shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600" data-tab="estetica">Estética Dental</button></li>
+                        <li><button class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg transition-all duration-300 hover:shadow-lg hover:bg-gray-300 dark:hover:bg-gray-600" data-tab="ortodontia">Ortodontia</button></li>
+                    </ul>
+                </div>
+                
+                <!-- FAQ Geral -->
+                <div class="max-w-3xl mx-auto space-y-6 faq-tab-content reveal-up" id="faq-geral" style="animation-delay: 0.4s">
+                    <div class="faq-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500" data-aos="fade-up">
+                        <h3 class="text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer">
+                            <span>Qual o tempo de recuperação após o procedimento?</span>
+                            <span class="text-primary text-xl toggle">+</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <p class="pt-2">O tempo de recuperação varia de acordo com o procedimento realizado e as condições individuais do paciente. Em geral, procedimentos menos invasivos podem exigir de 1 a 3 dias, enquanto procedimentos mais complexos como implantes podem necessitar de 7 a 14 dias de recuperação. Durante a consulta, o Dr. AlexandreRoss fornecerá um cronograma detalhado de recuperação específico para o seu caso.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer">
+                            <span>Como agendar uma consulta?</span>
+                            <span class="text-primary text-xl toggle">+</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <p class="pt-2">Para agendar uma consulta, você pode clicar no botão "Agendar Consulta" no topo desta página, que o direcionará para o nosso WhatsApp. Alternativamente, você pode ligar para (75) 99134-2279 em horário comercial ou preencher o formulário de contato nesta página.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer">
+                            <span>Quais métodos de pagamento são aceitos?</span>
+                            <span class="text-primary text-xl toggle">+</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <p class="pt-2">Aceitamos diversas formas de pagamento, incluindo dinheiro, cartões de crédito e débito, transferência bancária e PIX. Também oferecemos opções de parcelamento para determinados procedimentos. Consulte nossos atendentes para mais detalhes sobre planos de pagamento personalizados.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Implantes -->
+                <div class="max-w-3xl mx-auto space-y-6 faq-tab-content hidden" id="faq-implantes">
+                    <div class="faq-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500" data-aos="fade-up">
+                        <h3 class="text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer">
+                            <span>Qual a durabilidade dos implantes dentários?</span>
+                            <span class="text-primary text-xl toggle">+</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <p class="pt-2">Com os cuidados adequados, os implantes dentários podem durar a vida toda. O implante em si (a parte de titânio) raramente precisa ser substituído. Já as coroas protéticas sobre os implantes geralmente têm durabilidade de 10 a 15 anos, dependendo dos hábitos do paciente e da qualidade da higiene bucal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer">
+                            <span>O procedimento de implante é doloroso?</span>
+                            <span class="text-primary text-xl toggle">+</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <p class="pt-2">O procedimento de implante é realizado sob anestesia local, o que garante que o paciente não sinta dor durante a cirurgia. Após o procedimento, é normal sentir um desconforto leve a moderado, que pode ser controlado com medicação prescrita pelo Dr. AlexandreRoss. A maioria dos pacientes relata que o pós-operatório é mais confortável do que esperavam.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer">
+                            <span>Qualquer pessoa pode receber implantes?</span>
+                            <span class="text-primary text-xl toggle">+</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <p class="pt-2">A maioria das pessoas pode receber implantes, mas existem alguns fatores que precisam ser avaliados, como quantidade e qualidade do osso disponível, condições de saúde geral e hábitos como tabagismo. Mesmo pacientes com perda óssea podem ser candidatos através de procedimentos de enxerto ósseo. Uma avaliação completa com o Dr. AlexandreRoss determinará se implantes são adequados para o seu caso.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Estética Dental -->
+                <div class="max-w-3xl mx-auto space-y-6 faq-tab-content hidden" id="faq-estetica">
+                    <div class="faq-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500" data-aos="fade-up">
+                        <h3 class="text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer">
+                            <span>Lentes de contato dental machucam a gengiva?</span>
+                            <span class="text-primary text-xl toggle">+</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <p class="pt-2">Não, quando corretamente instaladas, as lentes de contato dental não machucam a gengiva. O Dr. AlexandreRoss utiliza técnicas de precisão para garantir que as lentes sejam perfeitamente adaptadas aos dentes, respeitando o limite gengival. O desenho das lentes é personalizado para cada paciente, proporcionando conforto e naturalidade.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer">
+                            <span>Quanto tempo dura o clareamento dental?</span>
+                            <span class="text-primary text-xl toggle">+</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <p class="pt-2">Os resultados do clareamento dental profissional geralmente duram de 1 a 3 anos, dependendo dos hábitos do paciente. O consumo frequente de café, vinho tinto, refrigerantes, tabaco e certos alimentos com corantes pode reduzir a durabilidade do clareamento. Realizamos sessões de manutenção quando necessário e fornecemos orientações para prolongar os resultados.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer">
+                            <span>É preciso desgastar muito o dente para colocar lentes?</span>
+                            <span class="text-primary text-xl toggle">+</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <p class="pt-2">Não, uma das principais vantagens das lentes de contato dental é o mínimo desgaste necessário, geralmente entre 0,2mm e 0,5mm da superfície do esmalte. Em alguns casos específicos, nem é preciso fazer desgaste. Isso preserva a estrutura natural do dente e torna o procedimento praticamente indolor e reversível. Comparativamente, uma faceta tradicional requer um desgaste de 1mm a 1,5mm.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Ortodontia -->
+                <div class="max-w-3xl mx-auto space-y-6 faq-tab-content hidden" id="faq-ortodontia">
+                    <div class="faq-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500" data-aos="fade-up">
+                        <h3 class="text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer">
+                            <span>Qual a idade ideal para iniciar o tratamento ortodôntico?</span>
+                            <span class="text-primary text-xl toggle">+</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <p class="pt-2">A avaliação ortodôntica inicial pode ser feita por volta dos 7 anos, quando os dentes permanentes começam a erupcionar. No entanto, o tratamento completo geralmente começa entre 9 e 14 anos, quando a maioria dos dentes permanentes já está presente. Vale ressaltar que não há idade máxima para a ortodontia - adultos de todas as idades podem se beneficiar do tratamento ortodôntico com excelentes resultados.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer">
+                            <span>Alinhadores transparentes funcionam tão bem quanto aparelhos tradicionais?</span>
+                            <span class="text-primary text-xl toggle">+</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <p class="pt-2">Sim, para a maioria dos casos, os alinhadores transparentes podem ser tão eficazes quanto os aparelhos tradicionais. No entanto, casos muito complexos de alinhamento ou que necessitam de movimentos dentários específicos podem requerer aparelhos fixos. O Dr. AlexandreRoss avaliará seu caso específico e recomendará a melhor opção. Uma vantagem dos alinhadores é a estética discreta e a facilidade de higienização.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item bg-white dark:bg-gray-800 p-6 rounded-lg shadow-custom hover:shadow-custom-lg transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-lg font-semibold mb-2 flex justify-between items-center cursor-pointer">
+                            <span>Por quanto tempo preciso usar o aparelho de contenção após o tratamento?</span>
+                            <span class="text-primary text-xl toggle">+</span>
+                        </h3>
+                        <div class="faq-answer">
+                            <p class="pt-2">Após a conclusão do tratamento ortodôntico, o uso de contenção é vital para manter os resultados. Inicialmente, recomenda-se usar a contenção 24 horas por dia, removendo apenas para alimentação e higiene, por cerca de 6 meses. Depois desse período, o uso noturno é geralmente suficiente. Muitos ortodontistas recomendam manter o uso da contenção durante a noite por tempo indeterminado para garantir a estabilidade do tratamento a longo prazo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section class="py-20 reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-heading reveal-up">
+                    Depoimentos
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto reveal-up" style="animation-delay: 0.2s">Veja o que nossos pacientes estão dizendo sobre suas experiências</p>
+            </div>
+            
+            <div class="testimonials-carousel">
+                <div class="testimonials-track">
+                    <!-- Depoimento 1 -->
+                    <div class="testimonial-card bg-white dark:bg-gray-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="mb-6 italic">"Minha experiência com o Dr. AlexandreRoss foi incrível! Ele transformou completamente meu sorriso com as lentes de contato dental. O atendimento foi excepcional."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary bg-opacity-20 dark:bg-primaryDark rounded-full flex items-center justify-center text-lg font-bold mr-4 text-primary dark:text-white">
+                                M
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Maria S.</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Lentes de Contato</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 2 -->
+                    <div class="testimonial-card bg-white dark:bg-gray-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="mb-6 italic">"Depois de anos com medo de dentista, encontrei o Dr. AlexandreRoss. Sua abordagem tranquila e sem dor me fez sentir seguro durante todo o tratamento."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary bg-opacity-20 dark:bg-primaryDark rounded-full flex items-center justify-center text-lg font-bold mr-4 text-primary dark:text-white">
+                                J
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">João P.</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Implantes Dentários</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 3 -->
+                    <div class="testimonial-card bg-white dark:bg-gray-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="mb-6 italic">"O Dr. AlexandreRoss é um profissional excepcional! O tratamento ortodôntico foi rápido e eficiente, com resultados muito superiores ao que eu esperava."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary bg-opacity-20 dark:bg-primaryDark rounded-full flex items-center justify-center text-lg font-bold mr-4 text-primary dark:text-white">
+                                C
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Carolina M.</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Ortodontia</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 4 -->
+                    <div class="testimonial-card bg-white dark:bg-gray-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="mb-6 italic">"Fiz clareamento dental e o resultado foi surpreendente! O Dr. AlexandreRoss explicou todo o processo, e não senti sensibilidade. Atendimento de primeira qualidade!"</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary bg-opacity-20 dark:bg-primaryDark rounded-full flex items-center justify-center text-lg font-bold mr-4 text-primary dark:text-white">
+                                R
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Ricardo T.</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Clareamento Dental</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimentos duplicados para manter o carrossel infinito -->
+                    <!-- Depoimento 1 (duplicado) -->
+                    <div class="testimonial-card bg-white dark:bg-gray-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="mb-6 italic">"Minha experiência com o Dr. AlexandreRoss foi incrível! Ele transformou completamente meu sorriso com as lentes de contato dental. O atendimento foi excepcional."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary bg-opacity-20 dark:bg-primaryDark rounded-full flex items-center justify-center text-lg font-bold mr-4 text-primary dark:text-white">
+                                M
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Maria S.</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Lentes de Contato</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 2 (duplicado) -->
+                    <div class="testimonial-card bg-white dark:bg-gray-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="mb-6 italic">"Depois de anos com medo de dentista, encontrei o Dr. AlexandreRoss. Sua abordagem tranquila e sem dor me fez sentir seguro durante todo o tratamento."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary bg-opacity-20 dark:bg-primaryDark rounded-full flex items-center justify-center text-lg font-bold mr-4 text-primary dark:text-white">
+                                J
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">João P.</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Implantes Dentários</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 3 (duplicado) -->
+                    <div class="testimonial-card bg-white dark:bg-gray-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="mb-6 italic">"O Dr. AlexandreRoss é um profissional excepcional! O tratamento ortodôntico foi rápido e eficiente, com resultados muito superiores ao que eu esperava."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary bg-opacity-20 dark:bg-primaryDark rounded-full flex items-center justify-center text-lg font-bold mr-4 text-primary dark:text-white">
+                                C
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Carolina M.</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Ortodontia</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 4 (duplicado) -->
+                    <div class="testimonial-card bg-white dark:bg-gray-700 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 flex">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="mb-6 italic">"Fiz clareamento dental e o resultado foi surpreendente! O Dr. AlexandreRoss explicou todo o processo, e não senti sensibilidade. Atendimento de primeira qualidade!"</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary bg-opacity-20 dark:bg-primaryDark rounded-full flex items-center justify-center text-lg font-bold mr-4 text-primary dark:text-white">
+                                R
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Ricardo T.</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Clareamento Dental</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Atendimento -->
+    <section id="contato" class="py-20 bg-white dark:bg-gray-900 reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-heading reveal-up">
+                    Solicite um Atendimento
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto reveal-up" style="animation-delay: 0.2s">Preencha o formulário abaixo e entraremos em contato para agendar sua consulta</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-custom-lg transform transition-all duration-500 hover:shadow-custom-hover reveal-left">
+                    <form id="atendimentoForm" class="custom-form space-y-6">
+                        <div class="form-group">
+                            <input type="text" id="nome" name="nome" class="form-input" placeholder=" " required>
+                            <label for="nome" class="form-label">Nome Completo *</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="telefone" name="telefone" class="form-input" placeholder=" " required>
+                            <label for="telefone" class="form-label">Telefone/WhatsApp *</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-input" placeholder=" ">
+                            <label for="email" class="form-label">E-mail</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="servico" name="servico" class="form-input" required>
+                                <option value="" disabled selected></option>
+                                <option value="limpeza">Limpeza e Profilaxia</option>
+                                <option value="clareamento">Clareamento Dental</option>
+                                <option value="protese">Próteses Dentárias</option>
+                                <option value="implante">Implantes Dentários</option>
+                                <option value="restauracao">Restaurações</option>
+                                <option value="canal">Tratamento de Canal</option>
+                                <option value="ortodontia">Ortodontia</option>
+                                <option value="estetica">Estética Dental</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                            <label for="servico" class="form-label">Serviço Desejado *</label>
+                        </div>
+                        
+                        <div id="outroServicoDiv" class="form-group hidden">
+                            <input type="text" id="outroServico" name="outroServico" class="form-input" placeholder=" ">
+                            <label for="outroServico" class="form-label">Especifique o serviço</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="mensagem" name="mensagem" rows="4" class="form-input" placeholder=" "></textarea>
+                            <label for="mensagem" class="form-label">Mensagem</label>
+                        </div>
+                        
+                        <div class="text-center pt-4">
+                            <button type="button" id="enviarWhatsApp" class="w-full bg-gradient-primary text-white px-8 py-4 rounded-lg text-lg font-medium transition-all shadow-lg hover:shadow-xl btn-submit">
+                                <i class="fab fa-whatsapp mr-2"></i>Enviar via WhatsApp
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="reveal-right">
+                    <div class="mb-10" data-aos="fade-left">
+                        <h3 class="text-2xl font-semibold mb-4">Localização</h3>
+                        <div class="map-container transition-all duration-500 hover:shadow-custom-lg hover:-translate-y-2">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15634.17389410464!2d-38.50162345!3d-12.97141445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161b1f7ac46531%3A0x98adf14d51fcc2c5!2sCentro%20Hist%C3%B3rico%20de%20Salvador!5e0!3m2!1spt-BR!2sbr!4v1671822764864!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div data-aos="fade-left" data-aos-delay="200">
+                        <h3 class="text-2xl font-semibold mb-4">Informações de Contato</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start group transition-all duration-300 hover:translate-x-2">
+                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-map-marker-alt text-primary group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Endereço</h4>
+                                    <p>Rua Exemplo, 123 - Centro, Salvador - BA</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start group transition-all duration-300 hover:translate-x-2">
+                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-phone text-primary group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Telefone</h4>
+                                    <p>
+                                        <a href="tel:+5575991342279" class="transition-colors duration-300 hover:text-primary">(75) 99134-2279</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start group transition-all duration-300 hover:translate-x-2">
+                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-envelope text-primary group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">E-mail</h4>
+                                    <p>
+                                        <a href="mailto:contato@dralexandreross.com.br" class="transition-colors duration-300 hover:text-primary">contato@dralexandreross.com.br</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start group transition-all duration-300 hover:translate-x-2">
+                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-clock text-primary group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Horário de Atendimento</h4>
+                                    <p>Segunda à Sexta: 8h às 18h</p>
+                                    <p>Sábado: 8h às 12h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="py-20 bg-gradient-primary text-white reveal">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-fadeIn">Pronto para transformar sua saúde bucal?</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto animate-fadeIn" style="animation-delay: 0.3s">Agende uma consulta e conheça os tratamentos personalizados do Dr. AlexandreRoss para um sorriso perfeito</p>
+            <a href="https://wa.me/5575991342279" target="_blank" class="bg-white text-primary px-10 py-4 rounded-lg text-lg font-medium hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 duration-300 animate-scaleIn cta-pulse" style="animation-delay: 0.6s">
+                <i class="fab fa-whatsapp mr-2"></i>Agendar Consulta
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div data-aos="fade-up" class="text-center md:text-left">
+                    <div class="flex items-center mb-6 justify-center md:justify-start">
+                        <div class="logo text-primary mr-2">AR</div>
+                        <h2 class="text-xl font-semibold">Dr.AlexandreRoss</h2>
+                    </div>
+                    <p class="mb-6">Transformando sorrisos, elevando autoestima e promovendo saúde bucal há mais de 15 anos.</p>
+                    <div class="flex space-x-5 mt-6 justify-center md:justify-start">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/5575991342279" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="100" class="text-center md:text-left">
+                    <h3 class="text-xl font-semibold mb-6">Contato</h3>
+                    <div class="space-y-4">
+                        <p class="flex items-center group hover:translate-x-2 transition-all duration-300 justify-center md:justify-start">
+                            <i class="fas fa-map-marker-alt mr-3 text-primary group-hover:scale-110"></i>
+                            <span>Rua Exemplo, 123 - Centro, Salvador - BA</span>
+                        </p>
+                        <p class="flex items-center group hover:translate-x-2 transition-all duration-300 justify-center md:justify-start">
+                            <i class="fas fa-phone mr-3 text-primary group-hover:scale-110"></i>
+                            <a href="tel:+5575991342279" class="hover:text-primary transition-colors">(75) 99134-2279</a>
+                        </p>
+                        <p class="flex items-center group hover:translate-x-2 transition-all duration-300 justify-center md:justify-start">
+                            <i class="fas fa-envelope mr-3 text-primary group-hover:scale-110"></i>
+                            <a href="mailto:contato@dralexandreross.com.br" class="hover:text-primary transition-colors">contato@dralexandreross.com.br</a>
+                        </p>
+                        <p class="flex items-center group hover:translate-x-2 transition-all duration-300 justify-center md:justify-start">
+                            <i class="fas fa-clock mr-3 text-primary group-hover:scale-110"></i>
+                            <span>Seg-Sex: 8h às 18h | Sáb: 8h às 12h</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="200" class="text-center md:text-left">
+                    <h3 class="text-xl font-semibold mb-6">Links Rápidos</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#inicio" class="flex items-center hover:text-primary transition-all duration-300 hover:translate-x-2 group justify-center md:justify-start">
+                            <i class="fas fa-chevron-right mr-2 text-sm text-primary group-hover:scale-125"></i>Início
+                        </a></li>
+                        <li><a href="#sobre" class="flex items-center hover:text-primary transition-all duration-300 hover:translate-x-2 group justify-center md:justify-start">
+                            <i class="fas fa-chevron-right mr-2 text-sm text-primary group-hover:scale-125"></i>Sobre
+                        </a></li>
+                        <li><a href="#por-que-nos" class="flex items-center hover:text-primary transition-all duration-300 hover:translate-x-2 group justify-center md:justify-start">
+                            <i class="fas fa-chevron-right mr-2 text-sm text-primary group-hover:scale-125"></i>Por que nos escolher
+                        </a></li>
+                        <li><a href="#antes-depois" class="flex items-center hover:text-primary transition-all duration-300 hover:translate-x-2 group justify-center md:justify-start">
+                            <i class="fas fa-chevron-right mr-2 text-sm text-primary group-hover:scale-125"></i>Antes e Depois
+                        </a></li>
+                        <li><a href="#tecnologias" class="flex items-center hover:text-primary transition-all duration-300 hover:translate-x-2 group justify-center md:justify-start">
+                            <i class="fas fa-chevron-right mr-2 text-sm text-primary group-hover:scale-125"></i>Tecnologias
+                        </a></li>
+                        <li><a href="#faq" class="flex items-center hover:text-primary transition-all duration-300 hover:translate-x-2 group justify-center md:justify-start">
+                            <i class="fas fa-chevron-right mr-2 text-sm text-primary group-hover:scale-125"></i>Perguntas Frequentes
+                        </a></li>
+                        <li><a href="#contato" class="flex items-center hover:text-primary transition-all duration-300 hover:translate-x-2 group justify-center md:justify-start">
+                            <i class="fas fa-chevron-right mr-2 text-sm text-primary group-hover:scale-125"></i>Contato
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <footer class="pt-8 pb-8 text-center text-sm bg-transparent">
+  <!-- Direitos autorais -->
+  <p class="text-white">
+    &copy; 2025 <strong class="text-blue-400">Dr. Alexandre Ross</strong> – Odontologia Especializada. Todos os direitos reservados.
+  </p>
+
+  <!-- Desenvolvedor -->
+  <div class="mt-6 flex flex-col items-center gap-1 text-white">
+    <p class="m-0">
+      <i class="fas fa-code text-yellow-500 mr-1"></i> Desenvolvido por
+      <a href="https://wa.me/5575991342279" target="_blank" class="text-blue-400 font-semibold hover:underline">
+        PeagahTech
+        <i class="fas fa-external-link-alt ml-1"></i>
+      </a>
+    </p>
+  </div>
+</footer>
+
+        </div>
+    </footer>
+
+    <!-- Script para AOS (Animate On Scroll) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        // Inicializar AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out',
+                once: true,
+                offset: 50
+            });
+            
+            // Carregar imagens imediatamente para evitar problemas de carregamento
+            document.querySelectorAll('img').forEach(img => {
+                if (img.hasAttribute('data-src')) {
+                    img.src = img.getAttribute('data-src');
+                }
+            });
+            
+            // Configura o modal de zoom de imagens
+            setupImageModal();
+        });
+        
+        // Mobile Menu Toggle com animação
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('show');
+            
+            // Alternar ícone
+            const icon = this.querySelector('i');
+            if (mobileMenu.classList.contains('show')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                this.classList.add('rotate-90');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                this.classList.remove('rotate-90');
+            }
+        });
+        
+        // Barra de progresso de rolagem
+        window.addEventListener('scroll', function() {
+            const scrollProgress = document.querySelector('.scroll-progress');
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (window.pageYOffset / totalHeight) * 100;
+            scrollProgress.style.width = progress + '%';
+        });
+        
+        // Animações de revelar durante scroll
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-up, .reveal-scale');
+            
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        
+        // Slider functionality com melhor animação
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.slider-indicator');
+        
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.style.animation = 'none';
+            });
+            
+            // Remove active class from all indicators
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Reset animation and show the current slide
+            setTimeout(() => {
+                slides[index].style.animation = '';
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+            }, 50);
+            
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            let newIndex = currentSlide + 1;
+            if (newIndex >= slides.length) newIndex = 0;
+            showSlide(newIndex);
+        }
+        
+        function prevSlide() {
+            let newIndex = currentSlide - 1;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            showSlide(newIndex);
+        }
+        
+        // Set up event listeners for slider
+        document.getElementById('nextSlide').addEventListener('click', function() {
+            nextSlide();
+            this.classList.add('animate-scaleIn');
+            setTimeout(() => this.classList.remove('animate-scaleIn'), 700);
+        });
+        
+        document.getElementById('prevSlide').addEventListener('click', function() {
+            prevSlide();
+            this.classList.add('animate-scaleIn');
+            setTimeout(() => this.classList.remove('animate-scaleIn'), 700);
+        });
+        
+        // Set up indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+                indicator.classList.add('animate-scaleIn');
+                setTimeout(() => indicator.classList.remove('animate-scaleIn'), 700);
+            });
+        });
+        
+        // Auto-advance slides
+        let sliderInterval = setInterval(nextSlide, 5000);
+        
+        // Pause slider on hover
+        const sliderContainer = document.querySelector('.slider');
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(sliderInterval);
+        });
+        
+        sliderContainer.addEventListener('mouseleave', () => {
+            sliderInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // FAQ Toggle functionality com animação melhorada
+        document.querySelectorAll('.faq-item h3').forEach(header => {
+            header.addEventListener('click', () => {
+                const faqItem = header.parentElement;
+                const toggle = header.querySelector('.toggle');
+                
+                // Toggle active class
+                faqItem.classList.toggle('active');
+                
+                // Update the toggle symbol with animation
+                if (faqItem.classList.contains('active')) {
+                    toggle.textContent = '−';  // Minus sign
+                    toggle.style.transform = 'rotate(180deg)';
+                } else {
+                    toggle.textContent = '+';  // Plus sign
+                    toggle.style.transform = 'rotate(0deg)';
+                }
+                
+                // Adicionar efeito de realce momentâneo
+                faqItem.style.borderLeft = '5px solid #3B82F6';
+                setTimeout(() => {
+                    if (!faqItem.classList.contains('active')) {
+                        faqItem.style.borderLeft = '0px solid #3B82F6';
+                    }
+                }, 500);
+            });
+        });
+        
+        // FAQ Tabs com feedback visual aprimorado
+        document.querySelectorAll('#faqTabs button').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Adicionar animação ao clicar
+                this.classList.add('animate-scaleIn');
+                setTimeout(() => this.classList.remove('animate-scaleIn'), 700);
+                
+                // Remove active class from all tabs
+                document.querySelectorAll('#faqTabs button').forEach(t => {
+                    t.classList.remove('active-tab', 'bg-primary', 'text-white');
+                    t.classList.add('bg-gray-200', 'dark:bg-gray-700');
+                });
+                
+                // Add active class to clicked tab
+                this.classList.add('active-tab', 'bg-primary', 'text-white');
+                this.classList.remove('bg-gray-200', 'dark:bg-gray-700');
+                
+                // Hide all tab content
+                document.querySelectorAll('.faq-tab-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show selected tab content with animation
+                const tabId = this.getAttribute('data-tab');
+                const selectedContent = document.getElementById(`faq-${tabId}`);
+                selectedContent.classList.remove('hidden');
+                selectedContent.classList.add('animate-fadeIn');
+                setTimeout(() => selectedContent.classList.remove('animate-fadeIn'), 700);
+            });
+        });
+        
+        // Show/hide "outro serviço" field based on selection
+        document.getElementById('servico').addEventListener('change', function() {
+            const outroServicoDiv = document.getElementById('outroServicoDiv');
+            if (this.value === 'outro') {
+                outroServicoDiv.classList.remove('hidden');
+                outroServicoDiv.classList.add('animate-fadeIn');
+            } else {
+                outroServicoDiv.classList.add('hidden');
+            }
+            
+            // Adicionar feedback visual de seleção
+            this.classList.add('border-primary');
+            setTimeout(() => this.classList.remove('border-primary'), 1000);
+        });
+        
+        // Ver mais casos functionality com animação
+        const verMaisCasosBtn = document.getElementById('verMaisCasosBtn');
+        const hiddenCases = document.querySelectorAll('.hidden-cases');
+        
+        verMaisCasosBtn.addEventListener('click', function() {
+            // Adicionar feedback visual ao botão
+            this.classList.add('animate-scaleIn');
+            setTimeout(() => this.classList.remove('animate-scaleIn'), 700);
+            
+            // Toggle hidden cases
+            hiddenCases.forEach(caseGroup => {
+                caseGroup.classList.toggle('show');
+                
+                // Adicionando animação suave
+                if (caseGroup.classList.contains('show')) {
+                    caseGroup.classList.add('animate-fadeIn');
+                    setTimeout(() => caseGroup.classList.remove('animate-fadeIn'), 700);
+                }
+            });
+            
+            // Update button text and icon
+            const btnIcon = this.querySelector('i');
+            if (hiddenCases[0].classList.contains('show')) {
+                this.querySelector('span').textContent = 'Ver menos';
+                btnIcon.classList.add('fa-chevron-up');
+                btnIcon.classList.remove('fa-chevron-down');
+            } else {
+                this.querySelector('span').textContent = 'Ver mais casos';
+                btnIcon.classList.add('fa-chevron-down');
+                btnIcon.classList.remove('fa-chevron-up');
+            }
+        });
+        
+        // Form submission to WhatsApp com feedback aprimorado
+        document.getElementById('enviarWhatsApp').addEventListener('click', function() {
+            const form = document.getElementById('atendimentoForm');
+            
+            // Animação no botão
+            this.classList.add('animate-scaleIn');
+            
+            // Basic validation
+            const nome = form.nome.value.trim();
+            const telefone = form.telefone.value.trim();
+            const servico = form.servico.value;
+            
+            if (!nome || !telefone || !servico) {
+                // Mostrar feedback de erro
+                const emptyFields = [];
+                if (!nome) emptyFields.push('Nome');
+                if (!telefone) emptyFields.push('Telefone');
+                if (!servico) emptyFields.push('Serviço');
+                
+                alert(`Por favor, preencha os campos obrigatórios (*): ${emptyFields.join(', ')}`);
+                
+                // Destaque visual nos campos vazios
+                if (!nome) form.nome.classList.add('border-red-500');
+                if (!telefone) form.telefone.classList.add('border-red-500');
+                if (!servico) form.servico.classList.add('border-red-500');
+                
+                setTimeout(() => {
+                    if (!nome) form.nome.classList.remove('border-red-500');
+                    if (!telefone) form.telefone.classList.remove('border-red-500');
+                    if (!servico) form.servico.classList.remove('border-red-500');
+                    this.classList.remove('animate-scaleIn');
+                }, 2000);
+                
+                return;
+            }
+            
+            // Collect form data
+            const email = form.email.value.trim();
+            const outroServico = servico === 'outro' ? form.outroServico.value.trim() : '';
+            const mensagem = form.mensagem.value.trim();
+            
+            // Format service
+            let servicoText = servico;
+            if (servico === 'outro' && outroServico) {
+                servicoText = outroServico;
+            } else {
+                const servicoElement = form.servico.options[form.servico.selectedIndex];
+                servicoText = servicoElement.text;
+            }
+            
+            // Create WhatsApp message
+            let whatsappMessage = `Olá Dr. AlexandreRoss, gostaria de agendar uma consulta!\n\n`;
+            whatsappMessage += `*Nome:* ${nome}\n`;
+            whatsappMessage += `*Telefone:* ${telefone}\n`;
+            
+            if (email) {
+                whatsappMessage += `*E-mail:* ${email}\n`;
+            }
+            
+            whatsappMessage += `*Serviço:* ${servicoText}\n`;
+            
+            if (mensagem) {
+                whatsappMessage += `\n*Mensagem:*\n${mensagem}`;
+            }
+            
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Efeito de sucesso
+            this.innerHTML = '<i class="fas fa-check mr-2"></i>Enviando...';
+            this.style.backgroundColor = '#10B981';
+            
+            // Open WhatsApp after a brief delay
+            setTimeout(() => {
+                window.open(`https://wa.me/5575991342279?text=${encodedMessage}`, '_blank');
+                
+                // Reset button
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fab fa-whatsapp mr-2"></i>Enviar via WhatsApp';
+                    this.style.backgroundColor = '';
+                    this.classList.remove('animate-scaleIn');
+                }, 1000);
+            }, 1000);
+        });
+        
+        // Smooth scrolling for anchor links com feedback visual
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                
+                // Adicionar efeito visual no link
+                this.classList.add('text-primary');
+                setTimeout(() => this.classList.remove('text-primary'), 1000);
+                
+                // Close mobile menu if open
+                if (document.getElementById('mobileMenu') && !document.getElementById('mobileMenu').classList.contains('hidden')) {
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                    document.getElementById('mobileMenu').classList.remove('show');
+                    
+                    // Resetar o ícone do menu
+                    const menuToggle = document.getElementById('menuToggle');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    menuToggle.classList.remove('rotate-90');
+                }
+                
+                // Rolar com efeito suave
+                const targetElement = document.querySelector(targetId);
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Adicionar destaque momentâneo na seção
+                setTimeout(() => {
+                    targetElement.classList.add('highlight');
+                    setTimeout(() => targetElement.classList.remove('highlight'), 1000);
+                }, 1000);
+            });
+        });
+        
+        // Simulador de Sorriso
+        function initTeethSimulator() {
+            const slider = document.getElementById('teethSlider');
+            const originalImg = document.querySelector('.teeth-original');
+            
+            if (!slider || !originalImg) {
+                console.error('Elementos do simulador de sorriso não encontrados');
+                return;
+            }
+            
+            // Ajustar opacidade inicial
+            originalImg.style.opacity = slider.value / 100;
+            
+            // Função para atualizar a opacidade com base no valor do slider
+            function updateSimulator() {
+                originalImg.style.opacity = slider.value / 100;
+            }
+            
+            // Adicionar evento de input ao slider
+            slider.addEventListener('input', updateSimulator);
+        }
+        
+        // Back to Top Button com animação aprimorada
+        function handleBackToTopButton() {
+            const backToTopBtn = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            // Adicionar efeito de pulso ao hover
+            backToTopBtn.addEventListener('mouseenter', function() {
+                this.querySelector('a').classList.add('animate-pulse');
+            });
+            
+            backToTopBtn.addEventListener('mouseleave', function() {
+                this.querySelector('a').classList.remove('animate-pulse');
+            });
+        }
+        
+        // Modal de Imagem (Zoom) com animações melhoradas
+        function setupImageModal() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.close-modal');
+            
+            // Adiciona o evento de clique em todas as imagens antes/depois
+            document.querySelectorAll('.before-after-image').forEach(img => {
+                img.addEventListener('click', function() {
+                    const fullSrc = this.getAttribute('data-full-src') || this.src;
+                    modal.style.display = "flex";
+                    
+                    // Animação de entrada
+                    setTimeout(() => {
+                        modal.classList.add('show');
+                        modalImg.src = fullSrc;
+                    }, 50);
+                });
+            });
+            
+            // Fecha o modal quando clicar no botão de fechar
+            closeBtn.addEventListener('click', function() {
+                // Animação de saída
+                this.classList.add('rotate-90');
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = "none";
+                    this.classList.remove('rotate-90');
+                }, 400);
+            });
+            
+            // Fecha o modal quando clicar fora da imagem
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                    setTimeout(() => {
+                        modal.style.display = "none";
+                    }, 400);
+                }
+            });
+        }
+        
+        // Navigation Indicator com tooltips e feedback aprimorado
+        function setupNavIndicator() {
+            const sections = document.querySelectorAll('section[id]');
+            const navDots = document.querySelectorAll('.nav-dot');
+            
+            function updateNavIndicator() {
+                let currentSectionId = '';
+                let minDistance = Number.MAX_VALUE;
+                
+                // Encontra a seção mais próxima do topo da viewport
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const distance = Math.abs(window.scrollY - sectionTop);
+                    
+                    // Verifica se esta seção está mais próxima do topo da viewport do que a seção atual
+                    if (distance < minDistance && window.scrollY >= sectionTop - 200 && window.scrollY < sectionTop + sectionHeight - 200) {
+                        minDistance = distance;
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+                
+                // Atualiza o indicador de navegação
+                navDots.forEach(dot => {
+                    dot.classList.remove('active');
+                    if (dot.getAttribute('data-section') === currentSectionId) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+            
+            // Adiciona evento de clique aos pontos de navegação
+            navDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    
+                    // Rolar para a seção com offset para o cabeçalho
+                    const targetSection = document.getElementById(sectionId);
+                    const headerOffset = 80;
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Atualiza o indicador ao rolar
+            window.addEventListener('scroll', updateNavIndicator);
+            
+            // Inicializa o indicador
+            updateNavIndicator();
+        }
+        
+        // Inicializa todas as funcionalidades após carregar a página
+        window.addEventListener('load', function() {
+            // Ativa as animações no scroll
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Chama uma vez para ativar elementos já visíveis
+            
+            // Inicializa o simulador de sorriso
+            initTeethSimulator();
+            
+            // Configura o botão de voltar ao topo
+            handleBackToTopButton();
+            
+            // Configura o modal de zoom de imagens
+            setupImageModal();
+            
+            // Configura o indicador de navegação
+            setupNavIndicator();
+        });
+    </script>
+</body>
+</html>
